@@ -15,6 +15,16 @@ This project demonstrates how predictive analytics on large datasets can be acce
 ## Overview
 In this project, we investigate the tradeoff between data size and processing time. Predictive models often face challenges when the dataset size increases, leading to longer processing times. By using parallel computing, we can speed up the process of building and evaluating machine learning models.
 
+The study focuses on balancing time and data size to achieve optimal performance for predictive analytics. Using the Python programming language and the `multiprocessing` library, this project compares serial and parallel execution for processing large datasets.
+
+### **Key Features**
+1. **Data Import and Preprocessing:** 
+   - Large datasets are preprocessed for efficient analytics.
+2. **Model Implementation:**
+   - The models are optimized to take advantage of multi-core systems.
+3. **Use of Parallel Processing:**
+   - Parallelization is implemented using Python’s `multiprocessing` library and the `Pool()` module.
+
 ## Project Structure
 ```plaintext
 .
@@ -55,7 +65,53 @@ By using Python's multiprocessing library, we implemented parallel processing wh
 
 ## Result
 Parallel processing demonstrated a noticeable speedup, especially for larger datasets. By distributing tasks across multiple cores, we reduced the time required to make predictions while maintaining model accuracy.
+#### **12 Cores**
+- **Data size:** 1,000  
+  - **Time (Serial):** 0.5026s  
+  - **Time (Parallel):** 0.2988s  
+  - **Speedup:** 1.68  
+  - **Efficiency:** 7.01%  
+- **Data size:** 50,000  
+  - **Time (Serial):** 24.9746s  
+  - **Time (Parallel):** 2.0411s  
+  - **Speedup:** 12.24  
+  - **Efficiency:** 50.98%
 
+#### **6 Cores**
+- **Data size:** 1,000  
+  - **Time (Serial):** 0.5003s  
+  - **Time (Parallel):** 0.3551s  
+  - **Speedup:** 1.41  
+  - **Efficiency:** 5.87%  
+- **Data size:** 50,000  
+  - **Time (Serial):** 24.1345s  
+  - **Time (Parallel):** 1.9939s  
+  - **Speedup:** 12.10  
+  - **Efficiency:** 50.43%
+
+#### **24 Cores**
+- **Data size:** 1,000  
+  - **Time (Serial):** 0.7596s  
+  - **Time (Parallel):** 0.1892s  
+  - **Speedup:** 4.02  
+  - **Efficiency:** 16.73%  
+- **Data size:** 50,000  
+  - **Time (Serial):** 38.0530s  
+  - **Time (Parallel):** 2.5239s  
+  - **Speedup:** 15.08  
+  - **Efficiency:** 62.82%
+
+---
+
+## **Technologies Used**
+- **Python Libraries:** 
+  - `multiprocessing`
+  - `pandas`
+  - `matplotlib`
+  - `seaborn`
+- **Supercomputing Resources:** Multi-core processors (6, 12, and 24 cores).
+  
+---
 ## How to run this:
 - Clone the repository:
   ```bash
